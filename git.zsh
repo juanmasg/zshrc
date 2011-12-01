@@ -39,7 +39,8 @@ git_branch="${git_branch:-no branch}"
 }
 
 git_dirty() {
-if [ "${git_worktree_is_bare}" = 'false' ] && [ -n "$(git status --untracked-files='no' --porcelain)" ]; then
+#if [ "${git_worktree_is_bare}" = 'false' ] && [ -n "$(git status --untracked-files='no' --porcelain)" ]; then
+if [ "${git_worktree_is_bare}" = 'false' ] && [ -n "$(git status)" ]; then
 git_dirty='%F{green}*'
 else
 unset git_dirty
