@@ -1,0 +1,3 @@
+TRAPUSR1(){
+	. ~/.zshrc
+}
