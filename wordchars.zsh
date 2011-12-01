@@ -9,7 +9,7 @@ custom-backward-kill-word(){
 	fi
 	local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
 	zle backward-kill-word 
-	CUTBUFFER="$TMPBUFFER$CUTBUFFER"
+	CUTBUFFER="$CUTBUFFER$TMPBUFFER"
 }
 
 zle -N custom-backward-kill-word
