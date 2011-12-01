@@ -1,4 +1,3 @@
-# historial arriba y abajo busca en base a lo que hay escrito (como vim)
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
