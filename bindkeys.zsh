@@ -12,5 +12,6 @@ bindkey '^X^e' edit-command-line
 zmodload -i zsh/deltochar
 bindkey '^[^w' zap-to-char
 
-bindkey '^[^f' vi-forward-char
+bindkey '^[^f' vi-find-next-char
 bindkey '^[^b' vi-find-prev-char
+
