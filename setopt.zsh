@@ -3,7 +3,7 @@ setopt appendhistory
 setopt sharehistory
 
 setopt automenu
-setopt histverify
+#setopt histverify
 setopt longlistjobs
 setopt autoparamkeys
 setopt autoparamslash
@@ -18,3 +18,4 @@ setopt histignorespace
 #stty -ixon
 setopt noflowcontrol
 
+setopt globcomplete
