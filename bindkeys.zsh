@@ -15,3 +15,6 @@ bindkey '^[^w' zap-to-char
 bindkey '^[^f' vi-find-next-char
 bindkey '^[^b' vi-find-prev-char
 
+bindkey '^[[1;5C' forward-word 
+bindkey '^[[1;5D' backward-word
+
