@@ -8,5 +8,9 @@ bindkey "^S" history-incremental-pattern-search-forward
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^X^e' edit-command-line
+
 zmodload -i zsh/deltochar
 bindkey '^[^w' zap-to-char
+
+bindkey '^[^f' vi-forward-char
+bindkey '^[^b' vi-find-prev-char
