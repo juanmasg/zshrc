@@ -26,3 +26,4 @@ zstyle ':completion:matches' group 'yes'
 # pager cuando menucomp no cabe en pantalla
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
+zstyle ':completion:*:processes-names' command 'ps -e -o comm='
