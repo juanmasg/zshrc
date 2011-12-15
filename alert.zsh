@@ -1,0 +1,3 @@
+alert(){
+    echo -e '\a'
+}
