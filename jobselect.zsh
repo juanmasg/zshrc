@@ -5,7 +5,7 @@ jobselect() {
 	if [[ $argno = 0 ]]; then
         BUFFER="jobs"
     else
-        BUFFER="fg %$argno"
+        BUFFER="fg $argno"
     fi
     zle .accept-line
 	return
