@@ -18,3 +18,4 @@ bindkey '^[^b' vi-find-prev-char
 bindkey '^[[1;5C' forward-word 
 bindkey '^[[1;5D' backward-word
 
+#bindkey -s '^[j' 'jobs\n'

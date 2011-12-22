@@ -1,3 +1,3 @@
 h(){
-	fc -l -$HISTSIZE | grep "$1"
+	fc -l -$HISTSIZE | grep -a "$@"
 }
