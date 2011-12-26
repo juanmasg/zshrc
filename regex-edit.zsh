@@ -5,7 +5,7 @@ regex-edit() {
    words=(${=BUFFER})
    read-from-minibuffer "Regexp: "
    [[ -z $REPLY ]] && return 0
-   if [[ "${REPLY:1:1}" == "/" ]]; then
+   if [[ "${REPLY:1:1}" =~ '^.?/.*/.*/.?$' ]]; then
        BUFFER="$( echo $words | sed ${REPLY} 2>/dev/null )"
    else
        setopt sh_word_split
