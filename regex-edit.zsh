@@ -5,8 +5,14 @@ regex-edit() {
    words=(${=BUFFER})
    read-from-minibuffer "Regexp: "
    [[ -z $REPLY ]] && return 0
- #  BUFFER="$words[1] $(echo $words[2,${#words}] | sed ${REPLY})"
-   BUFFER="$( echo $words | sed ${REPLY} 2>/dev/null )"
+   if [[ "${REPLY:1:1}" == "/" ]]; then
+       BUFFER="$( echo $words | sed ${REPLY} 2>/dev/null )"
+   else
+       setopt sh_word_split
+       args=(${REPLY})
+       unsetopt sh_word_split
+       BUFFER="$( echo $words | sed s/$args[1]/$args[2]/g 2>/dev/null )"
+   fi
  }
 
 zle -N regex-edit 
