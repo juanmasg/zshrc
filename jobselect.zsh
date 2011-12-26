@@ -11,5 +11,13 @@ jobselect() {
 	return
 }
 
+joblist() {
+    BUFFER="jobs"
+    zle .accept-line
+	return
+}
+
 zle -N jobselect
+zle -N joblist
 bindkey '^[j' jobselect
+bindkey '^[j^[j' joblist
