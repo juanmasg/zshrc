@@ -1,20 +1,42 @@
 jobselect() {
 #	read -k 1 "argno?job: "
 	read -k 1 argno
-	
-	if [[ $argno = 0 ]]; then
-        BUFFER="jobs"
-    else
-        BUFFER="fg $argno"
-    fi
+
+    case $argno in
+        0)
+            BUFFER="jobs"
+        ;;
+        "^]")
+            #BUFFER="fg"
+            joblist
+        ;;
+        [0-9])
+            BUFFER="fg $argno"
+        ;;
+        *)
+            echo "\nNo such job: $argno"
+            return
+        ;;
+    esac
+
     zle .accept-line
 	return
 }
 
 joblist() {
-    BUFFER="jobs"
+    case ${#jobstates} in
+        0)
+            #echo "\nNo background jobs."
+            return
+        ;;
+        1)
+            BUFFER="fg"
+        ;;
+        *)
+            BUFFER="jobs"
+        ;;
+    esac
     zle .accept-line
-	return
 }
 
 zle -N jobselect
